@@ -123,7 +123,7 @@ This confirms that the consumer is successfully subscribing to the Kafka topic a
 
 ---
 
-### Summary
+A REVOIR ### Summary
 
 These screenshots demonstrate that:
 - **All Docker containers are running correctly**,  
