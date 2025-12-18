@@ -36,7 +36,6 @@ The system is composed of **four Docker containers**:
 
 
 ---
-
 ## 4. Data Format
 
 Each message sent to Kafka is a JSON object containing weather measurements:
@@ -50,8 +49,30 @@ Each message sent to Kafka is a JSON object containing weather measurements:
   "pressure": 1012,
   "wind_speed": 5.3
 }
+``` 
 
----
+## 5. Installation and Execution of the Project
 
+The project is executed using Docker Compose.
 
+### Execution Steps
+1. The project is launched from a terminal using the following command:
+```bash
+docker-compose up
+```
+Docker Desktop automatically starts all containers defined in the `docker-compose.yml` file.
+
+Once the execution is launched, the following four containers are visible in the Docker Desktop interface:
+
+- **Zookeeper**: Kafka cluster coordination service  
+- **Kafka**: broker responsible for message storage and message streaming  
+- **Weather Producer**: generation and transmission of weather data  
+- **Weather Consumer**: real-time consumption and display of weather data  
+
+The containers can be started, stopped, or restarted directly from Docker Desktop using the **Play** and **Pause** buttons.
+
+The logs of each container are accessible from Docker Desktop and allow verification of:
+- data being sent by the producer,
+- data being received by the consumer,
+- correct operation of Kafka and Zookeeper.
 
