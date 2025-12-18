@@ -76,3 +76,60 @@ The logs of each container are accessible from Docker Desktop and allow verifica
 - data being received by the consumer,
 - correct operation of Kafka and Zookeeper.
 
+
+## 6. Execution Proof and Screenshots
+
+This section presents screenshots taken from **Docker Desktop** to demonstrate the correct execution of the project and the interaction between all components of the Kafka pipeline.
+
+---
+
+### Kafka Broker
+
+![Kafka](screenshots/kafka.jpg)
+
+This screenshot shows the **Kafka broker container** running successfully.  
+The logs indicate that Kafka is correctly started, that the consumer group is registered, and that the broker is handling message coordination and leader elections properly.  
+This confirms that Kafka is operational and ready to stream data.
+
+---
+
+### Zookeeper
+
+![Zookeeper](screenshots/zookeeper.jpg)
+
+This screenshot shows the **Zookeeper container** running without errors.  
+Zookeeper is responsible for coordinating the Kafka cluster.  
+The logs confirm that Zookeeper started successfully, initialized its data directories, and is listening for Kafka connections.
+
+---
+
+### Weather Producer
+
+![Producer](screenshots/producer.jpg)
+
+This screenshot shows the **Weather Producer container**.  
+The logs display multiple messages being sent to Kafka, each containing simulated weather data (station ID, timestamp, temperature, humidity, pressure, and wind speed).  
+This confirms that the producer is correctly generating and publishing data to the Kafka topic in real time.
+
+---
+
+### Weather Consumer
+
+![Consumer](screenshots/consumer.jpg)
+
+This screenshot shows the **Weather Consumer container**.  
+The logs display weather messages received from Kafka, corresponding to the data sent by the producer.  
+This confirms that the consumer is successfully subscribing to the Kafka topic and consuming messages in real time.
+
+---
+
+### Summary
+
+These screenshots demonstrate that:
+- **All Docker containers are running correctly**,  
+- **Kafka and Zookeeper are properly configured**,  
+- **The producer successfully sends data to Kafka**,  
+- **The consumer successfully receives and displays the streamed data**.
+
+This validates the correct end-to-end execution of the **real-time weather monitoring system**.
+
